@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" sizes="32x32" type="image/png"
+        href="https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>Spotify</title>
+</head>
+
+
+
+<body>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <img class="modal-logo"
+                src="https://www.freepnglogos.com/uploads/spotify-logo-png/spotify-logo-horizontal-white-20.png"
+                alt="Spotify Logo">
+            <span id="close" class="close">&times;</span>
+            <h2>Welcome to Spotify!</h2>
+            <p>This is a message that pops up when the website loads.</p>
+        </div>
+    </div>
+
+    <div class="content_container">
+
+        <div class="nav">
+            <button id="toggle-sidebar" class="toggle-sidebar">☰</button>
+            <span class="logo-container">
+                <img class="logoimgnav" src="./logo.svg" alt="Spotify Logo">
+            </span>
+
+            <span class="searchbar">
+                <img src="./search.svg" alt="Search">
+                <input type="text" placeholder="What do You want to Play?">
+            </span>
+            <span>
+                <button class="sign_in">Sign Up</button>
+                <button class="log_in">Log in</button>
+            </span>
+        </div>
+
+
+        <div class="container">
+            <aside class="sidebar">
+                <h2>Sidebar</h2>
+
+                <div class="form_card">
+                    <p class="heading">Add your own song</p>
+                    <form id="songForm">
+                        <div class="input-div">
+                            <input type="text" id="songTitle" placeholder="Song Title" required>
+                        </div>
+                        <div class="input-div">
+                            <input type="text" id="byline" placeholder="Artist/Album" required>
+                        </div>
+                        <div class="input-div">
+                            <input type="file" id="audioFile" accept="audio/*" required>
+                        </div>
+                        <div class="input-div">
+                            <input type="file" id="coverImage" accept="image/*" required>
+                        </div>
+                        <button data-label="Register" class="rainbow-hover">
+                            <span class="sp">Start Listening </span>
+                          </button>
+                        
+                    </form>
+                </div>
+
+
+
+
+
+
+
+
+
+            </aside>
+            <main class="main-section">
+                <div class="listen_now">
+                    <h1>Listen Now</h1>
+                </div>
+
+                
+
+                <div class="songCards" id="songCards">
+                    <div class="card card1">
+                        <audio id="audio1" src="./Illuminati Aavesham-(PagalSongs.Com.IN).mp3"></audio>
+
+                        <div class="card-footer">
+                            <div class="card-info">
+                                <p class="text-title">Illuminati<br>
+                                <p class="text-body">Avesham 2024&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <button id="playButton">Play</button>
+                                </p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+        </div>
+
+
+        </main>
+    </div>
+
+    <footer class="footer">
+        <div class="footer" id="footer">
+            <div id="glowLine">
+
+                
+
+
+
+            </div>
+            <img id="footerImage" src="" alt="Track Cover" style="width: 50px; height: 50px;">
+            <p id="nowPlaying">Now Playing: <span id="trackTitle"></span> - <span id="trackArtist"></span></p>
+            <div class="custom-controls">
+                <button id="prevTrackButton">⏮️</button>
+                <!-- <button id="playPauseButton">Play</button> -->
+                <button id="nextTrackButton">⏭️</button>
+            </div>
+            <audio id="footerAudio" style="display: none;"></audio>
+        </div>
+    </footer>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,730 @@
+body {
+    background-color: black;
+    font-family: "Roboto Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    margin: 0;
+    /* Reset margin for body */
+}
+
+.nav {
+    width: 98%;
+    height: 60px;
+    /* Keep the height fixed */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Make sure items stay in line */
+    padding: 0 15px;
+    position: sticky;
+    flex-wrap: nowrap;
+
+    /* Prevent stacking */
+}
+
+.logo-container {
+    margin-right: 530px;
+    /* Space between Spotify logo and home icon */
+    flex-shrink: 0;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+}
+
+.nav img {
+    padding-bottom: 0;
+    /* Remove padding for better alignment */
+}
+
+.logoimgnav {
+    height: 40px;
+    /* Ensure logo height */
+}
+
+.home-container {
+    margin-right: 0%;
+    /* Space between home icon and search bar */
+
+}
+
+.homecirc {
+    display: flex;
+    /* Center contents of homecirc */
+    align-items: center;
+    /* Center vertically */
+    justify-content: center;
+    /* Center horizontally */
+    height: 35px;
+    /* Reduced height for alignment */
+    width: 35px;
+    /* Ensure circle is a perfect circle */
+    border-radius: 50%;
+    /* Circular container */
+    background-color: rgb(82, 81, 81);
+}
+
+.homecirc img {
+    height: 25px;
+    /* Adjust height of home icon */
+    transition: background-color 0.25s ease;
+    translate: 2px -5px;
+}
+
+.homecirc:hover {
+    background-color: rgb(106, 105, 105);
+}
+
+
+.searchbar {
+    flex-grow: 1;
+    /* Allow searchbar to grow */
+    margin: 0 5px;
+    /* Space between elements */
+    padding: 5px 10px;
+    /* Reduced padding for a sleeker look */
+    border-radius: 20px;
+    background-color: rgb(82, 81, 81);
+    color: white;
+    overflow: hidden;
+    display: flex;
+    /* Flexbox for alignment */
+    align-items: center;
+    /* Center items vertically */
+    max-width: 250px;
+    /* Set a maximum width for the search bar */
+    flex-shrink: 1;
+    flex: 2;
+    margin-left: 15px;
+
+}
+
+.searchbar img {
+    height: 25px;
+    /* Adjust height of search icon */
+    margin-right: 5px;
+    /* Space between icon and input */
+    translate: 0px -5px;
+}
+
+.searchbar input {
+    flex-grow: 1;
+    /* Allow input to take available space */
+    background-color: rgb(82, 81, 81);
+    font-size: 15px;
+    /* Slightly smaller font size for a sleeker look */
+    color: white;
+    outline: none;
+    border: none;
+    height: 30px;
+    /* Match height with other elements */
+    font-weight: 900;
+}
+
+.searchbar input:hover {
+    background-color: rgb(106, 105, 105);
+    color: rgb(72, 70, 70);
+}
+
+.sign_in {
+    height: 35px;
+    /* Adjust height for consistency */
+    margin-left: 10px;
+    /* Space between buttons */
+    font-weight: 900;
+    border: none;
+    background: none;
+    color: white;
+    flex-shrink: 0;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+.log_in {
+    height: 35px;
+    /* Adjust height for consistency */
+    border-radius: 20px;
+    background: white;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    /* Adjust padding */
+    font-weight: 900;
+    flex-shrink: 0;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+
+/* Hide sidebar on smaller screens */
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 10px;
+        /* Adjust padding for smaller screens */
+        flex-wrap: nowrap;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        grid-template-columns: 1fr;
+        /* Stack sidebar and main section vertically */
+    }
+
+    .sidebar {
+        display: none;
+        /* Hide sidebar by default on small screens */
+    }
+
+    .searchbar {
+        max-width: 200px;
+        flex-grow: 1;
+        /* Adjust searchbar width for mobile */
+    }
+
+    .toggle-sidebar {
+        display: block;
+        /* Display the toggle button */
+        position: fixed;
+        top: 15px;
+        left: 10px;
+        z-index: 999;
+        margin-left: 20px;
+    }
+
+    .sidebar.show {
+        display: block;
+        /* Show sidebar when toggled */
+        position: absolute;
+        width: 200px;
+        /* Adjust width for small devices */
+        height: 100vh;
+        top: 0;
+        left: 0;
+    }
+
+    .sign_in,
+    .log_in {
+        padding: 5px 10px;
+        /* Reduce button sizes */
+        font-size: 14px;
+        /* Adjust font size for smaller screens */
+    }
+
+    .main-section {
+        flex-grow: 1;
+        /* Take up all remaining space */
+        padding: 15px;
+        margin-left: 0;
+        /* No sidebar margin on small screens */
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .logo-container {
+        flex: 1;
+        /* Let logo occupy available space */
+    }
+
+
+
+}
+
+@media (max-width: 480px) {
+    .nav {
+        padding: 0 5px;
+        /* Minimal padding on small devices */
+        justify-content: space-between;
+    }
+
+    .logo-container {
+        margin-right: 5px;
+        /* Further reduced margin for narrow devices */
+    }
+
+    .searchbar {
+        flex-grow: 1;
+        max-width: 140px;
+        /* Adjusted max width */
+        margin-right: 5px;
+    }
+
+    .toggle-sidebar {
+        margin-right: 10px;
+        /* Ensure space between toggle and logo */
+    }
+
+    .sign_in,
+    .log_in {
+        font-size: 10px;
+        /* Adjusted font size */
+        padding: 3px 6px;
+        /* Reduced padding for small buttons */
+        margin-left: 3px;
+    }
+}
+
+.container {
+    display: grid;
+
+    width: 100%;
+
+    grid-template-columns: 300px 1fr;
+    /* Sidebar width and main section */
+    height: 100vh;
+    /* Full height */
+    gap: 20px;
+    /* Space between sections */
+    padding: 20px;
+    /* Optional padding around the container */
+    overflow: hidden;
+    /* Prevent overflow from the container */
+}
+
+.sidebar {
+    background-color: #222222;
+    /* Black background */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    
+    /* Rounded corners */
+}
+
+.main-section {
+    background-color: #222222;
+    /* Black background */
+    color: white;
+    /* White text for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    /* Rounded corners */
+    overflow-y: auto;
+    /* Enable vertical scrolling */
+    max-height: calc(100vh - 80px);
+    /* Subtract footer height from total height */
+}
+
+.sidebar h2 {
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin: 15px 0;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Existing styles... */
+
+.modal {
+    display: flex;
+    /* Center modal */
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    /* Fixed position */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    /* Make background transparent */
+    z-index: 1000;
+    /* Above other content */
+}
+
+.modal-content {
+    background-color: #1DB954;
+    /* Spotify green background */
+    border-radius: 15px;
+    /* Rounded corners */
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+    /* Width of the modal */
+    position: relative;
+    /* Position for close button */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.6);
+    /* Black box shadow */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8),
+        /* Black inward glow */
+        0 0 20px rgba(29, 185, 84, 0.8);
+    /* Spotify green outward glow */
+}
+
+.close {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    /* Adjust color of the close button */
+}
+
+/* Style the Spotify logo inside the modal */
+.modal-logo {
+    width: 150px;
+    height: 50px;
+    margin-bottom: 15px;
+    /* Space between logo and the text */
+}
+
+.content_container.blur {
+    filter: blur(5px);
+    /* Blur the content */
+    transition: filter 0.3s;
+    /* Smooth transition */
+}
+
+/* Modal Text */
+.modal-content h2,
+.modal-content p {
+    color: white;
+    /* White text for contrast */
+    margin: 10px 0;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    /* Size for the heading */
+}
+
+.modal-content p {
+    font-size: 16px;
+    /* Size for the paragraph */
+}
+
+.listen_now {
+    margin-top: 0px;
+}
+
+.show-sidebar .sidebar {
+    transform: translateX(0);
+    /* Sidebar slides in when toggled */
+}
+
+
+
+
+
+/* .playbtn{
+    color: black;
+    background-color: #1DB954 ;
+    width: 50px;
+    border-radius: 45%;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    border: 2px solid black;
+    font-size: 40px;
+    position: absolute;
+    bottom: 18px;
+    left: 220px;
+    box-shadow: 0 0 0 2px  rgba(29, 185, 84, 0.8);
+   
+}
+
+.playsymb{
+    position: relative;
+    bottom: 3px;
+    left: 2px;
+}
+ */
+
+.playbtn {
+    background-color: #1DB954;
+    width: 50px;
+    border-radius: 45%;
+    height: 50px;
+    font-size: 40px;
+    position: absolute;
+    bottom: 18px;
+    left: 220px;
+
+}
+
+/* From Uiverse.io by alexruix */
+.card {
+    width: 190px;
+    height: 254px;
+    padding: .8em;
+    background: #5a5959;
+    position: relative;
+    overflow: visible;
+
+    border-radius: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card-img {
+    background-color: #1DB954;
+    height: 40%;
+    width: 100%;
+    border-radius: .5rem;
+    transition: .3s ease;
+    display: block;
+}
+
+.card-info {
+    padding-top: 75%;
+    color: #ddd;
+    justify-content: baseline;
+    opacity: 0;
+}
+
+svg {
+    width: 20px;
+    height: 20px;
+}
+
+.card-footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 0px;
+    position: absolute;
+    bottom: 0;
+    /* Align to the bottom */
+    left: 0;
+    right: 0;
+    padding: 10px;
+    bottom: 0;
+    /* Align to the bottom */
+    left: 0;
+    right: 0;
+    padding: 10px;
+
+}
+
+/*Text*/
+.text-title {
+    font-weight: 900;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+.text-body {
+    font-size: .9em;
+    padding-bottom: 10px;
+}
+
+
+
+/*Hover*/
+.card:hover {
+    transform: translateY(-5%);
+    transition: ease-in-out;
+    transition-duration: 0.25s;
+    box-shadow: inset 0 -15px 25px rgba(0, 0, 0, 0.7);
+
+    .card-info {
+        opacity: 1;
+        transition: 0.75s;
+
+    }
+}
+
+
+
+.card1 {
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK79qJkRZIvz7ZeYHHx8ZbvYUZ4rQPfMbVww&s');
+    background-size: cover;
+}
+
+#playButton {
+    background-color: #1DB954;
+    border-radius: 15px;
+    border: 0px;
+    padding: 10px;
+    font-weight: 700;
+
+}
+
+.songCards {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows wrapping to the next line if needed */
+    gap: 20px;
+}
+
+.form_card {
+    height: 20rem;
+    background: lightgrey;
+    background-color: #4158D0;
+    background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    padding: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    transition: 0.5s ease-in-out;
+}
+
+.heading {
+    text-align: center;
+    font-weight: 600;
+    padding-top: 1rem;
+    font-size: large;
+}
+
+.input-div {
+    display: flex;
+    margin-top: 1rem;
+    transition: 0.5s ease-in-out;
+}
+
+.form_card input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    width: 12rem;
+    padding: 8px;
+    outline: none;
+}
+
+
+
+
+.form_card input::placeholder {
+    color: black;
+}
+
+.input:focus {
+    transition: 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.input:hover {
+    transition: 0.2s ease-in-out;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+/* From Uiverse.io by JkHuger */
+.rainbow-hover {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ff7576;
+    background-color: #2B3044;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 4px 9px;
+    position: relative;
+    line-height: 24px;
+    border-radius: 9px;
+    box-shadow: 0px 1px 2px #2B3044,
+        0px 4px 16px #2B3044;
+    transform-style: preserve-3d;
+    transform: scale(var(--s, 1)) perspective(600px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+    perspective: 600px;
+    transition: transform 0.1s;
+    margin-top: 10px;
+    margin-left: 45px;
+}
+
+.sp {
+    background: linear-gradient(90deg,
+            #866ee7,
+            #ea60da,
+            #ed8f57,
+            #fbd41d,
+            #2cca91);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+}
+
+.rainbow-hover:active {
+    transition: 0.3s;
+    transform: scale(0.93);
+}
+
+.footer {
+    background-color: #000000;
+    /* Dark gray background */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    /* Vertical padding */
+    position: fixed;
+    /* Fixed position */
+    bottom: 0;
+    /* Align to the bottom */
+    left: 0;
+    right: 0;
+    /* Stretch across the width */
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    
+}
+
+
+.custom-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.custom-controls button {
+    background-color: #1DB954;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 10px 15px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 800;
+}
+
+.custom-controls button:hover {
+    background-color: #17a34a;
+}
+
+
+
+
+.glowLine {
+    position: absolute;
+    top: -5px; /* Adjust as needed */
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: linear-gradient(90deg, rgba(255, 0, 0, 0.8), rgba(255, 154, 0, 0.8), rgba(255, 0, 0, 0.8));
+    opacity: 1; /* Start hidden */
+    z-index: 1;
+    transition: opacity 0.5s; /* Smooth transition for opacity */
+}
+
+@keyframes glowing {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
